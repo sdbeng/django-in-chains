@@ -8,10 +8,17 @@ def home(request):
 
     # ... and return a response with its results
     # return HttpResponse(response)
-    return render(request, 'users/home.html', {})
+    # return render(request, 'users/home.html', {})
+    context = {'name': 'Dani', 'tasks': ['breakfast time', 'ride bike', 'work on pipenv projects']}
+    return render(request, 'users/home.html', context)
 
 def detail(request):
-    return HttpResponse("<h1>detail views!!</h1>")
+    # return HttpResponse("<h1>detail views!!</h1>")
+    context = {'header': 'This is my detail vieeeeeeeew!!'}
+    return render(request, 'users/detail.html', context)
 
 def add(request):
-    return HttpResponse("<h1>add views!!</h1>")
+    # return HttpResponse("<h1>add views!!</h1>")
+    context = {'header': 'This is my add view!!'}
+
+    return render(request, 'users/add.html', context)
