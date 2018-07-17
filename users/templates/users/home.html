@@ -1,4 +1,4 @@
-{% extends `users/layout.html` %}
+{% extends 'users/layout.html' %}
 {% block title %} Home {% endblock %}
 
 {% block content %}
@@ -12,7 +12,7 @@
         {% endfor %}
     </ul>
     {% else %}
-    <p>Looks like you're free to goooo </p>
+    <p>Looks like you're getting ready to work.</p>
     {% endif %}
 
 {% endblock %}
