@@ -9,7 +9,7 @@ def home(request):
     # ... and return a response with its results
     # return HttpResponse(response)
     # return render(request, 'users/home.html', {})
-    context = {'name': 'Dani', 'tasks': ['breakfast time', 'ride bike', 'work on pipenv projects']}
+    context = {'name': 'Dani', 'tasks': ['breakfast time', 'ride bike', 'Go to work', 'hack pipenv projects', 'snack time', 'Watch favorite tv show','Go to bed']}
     return render(request, 'users/home.html', context)
 
 def detail(request):
