@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+from django.http import Http404, HttpResponse
+
+from .models import User
 
 # Create your views here.
 def home(request):
@@ -12,9 +14,11 @@ def home(request):
     context = {'name': 'Dani', 'tasks': ['breakfast time', 'ride bike', 'Go to work', 'hack pipenv projects', 'snack time', 'Watch favorite tv show','Go to bed']}
     return render(request, 'users/home.html', context)
 
-def detail(request):
+def detail(request, user_id):
     # return HttpResponse("<h1>detail views!!</h1>")
-    context = {'header': 'This is my detail vieeeeeeeew!!'}
+    # context = {'header': 'This is my detail vieeeeeeeew!!'}
+    user = get_object_or_404(User, user_id)
+    context = {'user': User.objects.get(id=user_id)}
     return render(request, 'users/detail.html', context)
 
 def add(request):
