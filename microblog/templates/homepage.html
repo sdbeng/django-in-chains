@@ -1,0 +1,7 @@
+<h1>Hello Django homepage!!!</h1>
+
+{% for tweet in tweets %}
+<p>@{{tweet.user}} says {{tweet.text}} </p>
+{% endfor %}
+
+{{ tweets }}
