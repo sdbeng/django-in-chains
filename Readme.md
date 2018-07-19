@@ -17,3 +17,8 @@ Hook up a users and blog app to a template based application. Working with class
 $ python3 manage.py makemigrations
 $ python3 manage.py migrate
 ```
+- to query for 1 user id
+```
+>>> from users.models import User
+>>> User.objects.get(first_name='jane').id
+```
