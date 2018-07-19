@@ -17,6 +17,8 @@ def home(request):
 def detail(request, user_id):
     # return HttpResponse("<h1>detail views!!</h1>")
     # context = {'header': 'This is my detail vieeeeeeeew!!'}
+
+    # instead of a try-except block, i can use get_object_or_404 method
     user = get_object_or_404(User, user_id)
     context = {'user': User.objects.get(id=user_id)}
     return render(request, 'users/detail.html', context)
