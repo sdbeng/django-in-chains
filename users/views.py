@@ -20,7 +20,7 @@ def detail(request, user_id):
 
     # instead of a try-except block, i can use get_object_or_404 method
     user = get_object_or_404(User, user_id)
-    context = {'user': User.objects.get(id=user_id)}
+    context = {'user': User.objects.get(first_name='jane')}
     return render(request, 'users/detail.html', context)
 
 def add(request):
