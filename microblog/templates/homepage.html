@@ -1,7 +1,41 @@
-<h1>Hello Django homepage!!!</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-{% for tweet in tweets %}
-<p>@{{tweet.user}} says {{tweet.text}} </p>
-{% endfor %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>micro app</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
 
-{{ tweets }}
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hello Django homepage!!!</h1>
+        
+        <form action="/" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                    <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3">
+                        
+                    </textarea>
+            </div>
+                   
+            <button type="submit" class="btn btn-primary">Submit post</button>
+        </form>
+        {% for tweet in tweets %}
+        <p>@{{tweet.user}} says {{tweet.text}} </p>
+        {% endfor %}
+    </div>
+    
+    
+    </div>
+
+
+</body>
+
+</html>
+
+<!-- {{ tweets }} -->
